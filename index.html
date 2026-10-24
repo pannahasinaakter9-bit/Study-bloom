@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StudyBloom — Study smarter. Feel better.</title>
+  <meta name="description" content="StudyBloom is a simple study space with a focus timer, study planner and practical study tips.">
+  <meta name="theme-color" content="#f7eaf4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top">🌷 <span>StudyBloom</span></a>
+  <nav id="mainNav">
+    <a href="#focus">Focus</a>
+    <a href="#planner">Planner</a>
+    <a href="#learn">Learn</a>
+    <a href="#tools">Tools</a>
+  </nav>
+  <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">A little study corner for you ♡</p>
+      <h1>Study smarter.<br><em>Feel better.</em></h1>
+      <p>Need to study but don't know where to start? StudyBloom gives you a few simple tools to make that first step easier.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#tools">Start studying →</a>
+        <a class="secondary" href="#learn">See study tips</a>
+      </div>
+      <p class="tiny">No perfect routine needed. Just start somewhere.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun">☀️</div>
+      <div class="plant">🪴</div>
+      <div class="book">📚</div>
+      <div class="laptop">💻</div>
+      <div class="note">“One thing at a time.”</div>
+    </div>
+  </section>
+
+  <section class="welcome">
+    <div>
+      <span class="pill">✨ TODAY'S REMINDER</span>
+      <h2>You don't need motivation first.<br>You can start small.</h2>
+    </div>
+    <button class="pink" onclick="newTip()">Give me a tip</button>
+  </section>
+
+  <section id="tools" class="section">
+    <div class="heading">
+      <p class="eyebrow">Your little toolbox</p>
+      <h2>Quick tools ✨</h2>
+      <p>Pick what you need right now.</p>
+    </div>
+
+    <div class="tool-grid">
+      <article class="card timer-card">
+        <div class="icon">⏱️</div>
+        <h3>Focus Timer</h3>
+        <p>Choose a session, put distractions away, and get started.</p>
+        <div class="timer">
+          <div id="timerDisplay">25:00</div>
+          <div class="timer-row">
+            <button onclick="setTimer(10)">10m</button>
+            <button onclick="setTimer(25)">25m</button>
+            <button onclick="setTimer(45)">45m</button>
+          </div>
+          <div class="timer-row">
+            <button class="pink" onclick="toggleTimer()" id="timerStart">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+          </div>
+        </div>
+      </article>
+
+      <article id="planner" class="card">
+        <div class="icon">📋</div>
+        <h3>My Study Plan</h3>
+        <p>Write down today's tasks and tick them off as you finish.</p>
+        <div class="task-input">
+          <input id="taskInput" placeholder="e.g. Biology — Chapter 3" maxlength="100">
+          <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <p class="progress" id="taskProgress">0 of 0 complete</p>
+      </article>
+
+      <article id="focus" class="card">
+        <div class="icon">🎯</div>
+        <h3>Focus Rescue</h3>
+        <p>Already distracted? Try this little reset.</p>
+        <div class="rescue">
+          <b>1.</b> Put your phone away.<br>
+          <b>2.</b> Choose one task.<br>
+          <b>3.</b> Set 10 minutes.<br>
+          <b>4.</b> Start before you feel ready.
+        </div>
+        <button onclick="newTip()">Another tip →</button>
+        <p class="tip" id="tipText">Start with ten minutes. You can always do more later.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="challenge">
+    <div>
+      <span class="pill">🔥 10-MINUTE CHALLENGE</span>
+      <h2>Can you start before you scroll?</h2>
+      <p>Choose one tiny task. Put your phone away. Work for 10 minutes. That's all.</p>
+    </div>
+    <button class="pink" onclick="startChallenge()">Start challenge</button>
+  </section>
+
+  <section id="learn" class="section">
+    <div class="heading">
+      <p class="eyebrow">Simple and actually useful</p>
+      <h2>Study smarter 🌱</h2>
+      <p>A few methods worth trying.</p>
+    </div>
+    <div class="learn-grid">
+      <article><span>🧠</span><h3>Active Recall</h3><p>Close your notes and try to explain what you remember. Check your notes afterwards.</p></article>
+      <article><span>🔁</span><h3>Spaced Revision</h3><p>Come back to important topics over several days instead of trying to remember everything at once.</p></article>
+      <article><span>🪴</span><h3>Start Small</h3><p>Replace “I have so much to study” with one clear next task. Starting is the hard part.</p></article>
+      <article><span>📱</span><h3>Phone Boundaries</h3><p>Keep your phone out of reach while you work, then check it during a planned break.</p></article>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div>
+      <span class="pill">NEED A QUICK PLAN?</span>
+      <h2>“My exam is tomorrow.”</h2>
+      <p>Don't panic. Choose how much time you have and get a simple plan to work from.</p>
+      <div class="plan-controls">
+        <select id="examHours" aria-label="Available study time">
+          <option value="2">2 hours</option>
+          <option value="4" selected>4 hours</option>
+          <option value="6">6 hours</option>
+          <option value="8">8 hours</option>
+        </select>
+        <button class="pink" onclick="makeEmergencyPlan()">Make my plan</button>
+      </div>
+    </div>
+    <div id="emergencyResult" class="result">Your plan will appear here.</div>
+  </section>
+
+  <section class="quote">
+    <p>“You don't have to finish everything today.<br>You just have to keep moving.” ♡</p>
+    <button class="secondary" onclick="scrollToTop()">Back to the top ↑</button>
+  </section>
+</main>
+
+<footer>
+  <div><b>🌷 StudyBloom</b><p>Study smarter • Focus better • Stress less</p></div>
+  <div><b>Made for students</b><p>A small study space, built with care.</p></div>
+  <div class="footer-note">StudyBloom is for general educational use.</div>
+</footer>
+
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

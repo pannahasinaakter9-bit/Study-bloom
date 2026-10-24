@@ -1,0 +1,69 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#242840;background:#fffdfb;font-family:Nunito,Arial,sans-serif;line-height:1.6}
+.nav{height:70px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#ffffffeb;backdrop-filter:blur(12px);position:sticky;top:0;z-index:20;border-bottom:1px solid #eee8ef}
+.brand{color:#242840;text-decoration:none;font-size:24px;font-weight:800}
+.nav nav{display:flex;gap:25px}
+.nav nav a{color:#42485f;text-decoration:none;font-weight:700;font-size:14px}
+.menu{display:none;border:0;background:none;font-size:22px;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;padding:65px 8%;min-height:520px;background:linear-gradient(120deg,#f4efff,#fff 53%,#fdebf5)}
+.eyebrow{font-family:"Patrick Hand";font-size:22px;margin:0 0 4px}
+.hero h1{font-family:"Patrick Hand";font-size:72px;line-height:.95;margin:0 0 20px}
+.hero h1 em{font-style:normal;color:#cf4b9b}
+.hero-copy>p:not(.eyebrow):not(.tiny){font-size:18px;max-width:590px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:25px 0}
+.primary,.secondary,.pink,button{border:0;border-radius:999px;padding:12px 20px;font:800 14px Nunito;cursor:pointer;text-decoration:none}
+.primary,.pink{background:#cf4b9b;color:#fff}
+.secondary{background:#fff;color:#4b5066;border:1px solid #e7dfeb}
+.tiny{font-size:12px;color:#7b8093}
+.hero-art{min-height:360px;border-radius:35px;background:linear-gradient(145deg,#eadbf8,#dceff2);position:relative;box-shadow:0 25px 60px #67557b22;overflow:hidden}
+.sun{position:absolute;right:45px;top:30px;font-size:45px}
+.plant{position:absolute;right:35px;bottom:25px;font-size:65px}
+.book{position:absolute;left:55px;bottom:42px;font-size:70px}
+.laptop{position:absolute;left:45%;top:37%;font-size:90px}
+.note{position:absolute;right:16%;top:38%;background:#fff9;padding:20px 28px;border-radius:18px;font-family:"Patrick Hand";font-size:25px;transform:rotate(4deg);box-shadow:0 10px 25px #5552}
+.welcome,.challenge,.problem{margin:35px 7%;padding:28px 32px;border-radius:28px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.welcome{background:#fff2f8}.challenge{background:#eaf8f2}.problem{background:#f1efff;align-items:stretch}
+.welcome h2,.challenge h2,.problem h2{font-family:"Patrick Hand";font-size:34px;line-height:1.05;margin:7px 0}
+.pill{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#a23d7c}
+.section{padding:45px 7%}
+.heading{text-align:center;margin-bottom:25px}
+.heading h2{font-family:"Patrick Hand";font-size:45px;margin:0}
+.heading p{margin:2px}
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid #eee7ef;border-radius:24px;padding:25px;box-shadow:0 12px 35px #5e52730b}
+.icon{font-size:32px}.card h3,.learn-grid h3{font-size:21px;margin:8px 0}.card p{color:#656b80}
+.timer{text-align:center;background:#f8f5ff;padding:15px;border-radius:18px}
+.timer #timerDisplay{font-size:50px;font-weight:800;letter-spacing:2px}
+.timer-row{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.timer button,.card>button{padding:8px 13px;background:#fff;border:1px solid #e4deeb;color:#454b61}
+.timer .pink,.card .pink{background:#cf4b9b;color:#fff;border:0}
+.task-input{display:flex;gap:7px}
+.task-input input,.plan-controls select{min-width:0;flex:1;border:1px solid #ddd7e4;border-radius:12px;padding:11px;font:inherit}
+.task-input button{background:#242840;color:#fff;border:0;border-radius:12px;padding:0 14px}
+.card ul{padding-left:0;list-style:none;margin:14px 0}
+.card li{display:flex;gap:9px;align-items:center;padding:8px 0;border-bottom:1px solid #f0edf2}
+.card li.done span{text-decoration:line-through;color:#999}.card li button{padding:2px 7px;border:0;background:none;color:#a0a3af}
+.progress{font-size:12px!important}
+.rescue{background:#fff7fb;border-radius:16px;padding:15px;line-height:2}
+.tip{font-size:13px!important}
+.learn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.learn-grid article{padding:22px;background:#fff;border:1px solid #eee7ef;border-radius:20px}
+.learn-grid span{font-size:30px}
+.plan-controls{display:flex;gap:8px;margin-top:18px}
+.result{background:#fff;border-radius:18px;padding:22px;flex:0 0 45%;min-height:120px}
+.result ol{margin:5px 0;padding-left:22px}
+.quote{text-align:center;padding:65px 8%;background:linear-gradient(120deg,#fdeaf4,#efebff)}
+.quote p{font:32px "Patrick Hand";margin:0 0 20px}
+.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(100px);background:#242840;color:#fff;padding:12px 18px;border-radius:999px;opacity:0;transition:.25s;z-index:50}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+footer{background:#242840;color:#fff;padding:30px 7%;display:flex;gap:40px;justify-content:space-between;flex-wrap:wrap}
+footer p{margin:4px 0;color:#d6d8e1;font-size:13px}.footer-note{width:100%;font-size:11px;color:#aeb2c0}
+@media(max-width:850px){
+  .nav{padding:0 5%}.nav nav{display:none}.menu{display:block}
+  .hero{grid-template-columns:1fr;padding:45px 6%}.hero h1{font-size:57px}.hero-art{min-height:280px}
+  .tool-grid,.learn-grid{grid-template-columns:1fr}
+  .welcome,.challenge,.problem{margin:22px 4%;padding:24px;display:block}
+  .section{padding:35px 5%}.plan-controls{flex-direction:column}.result{margin-top:15px}
+  .quote{padding:45px 6%}
+}
